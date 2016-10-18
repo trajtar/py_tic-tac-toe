@@ -1,2 +1,4 @@
-# Tic-tac-toe
-Tic-tac-toe game
+# tic-tac-toe
+
+Tic-Tac-Toe state function and its tests.
+
