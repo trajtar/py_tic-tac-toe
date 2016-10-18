@@ -23,20 +23,18 @@ class Tic_Tac_Toe_State_Checker_Test(unittest.TestCase):
         """Test - X won board.
         Board contains extra empty line at beginning and end."""
         board_2 = [
-            "X...",
-            ".X..",
-            "..X.",
-            "...X",
+            "X..",
+            ".X.",
+            "..X",
             ]
         self.assertEqual(tic_tac_toe_state_checker(board=board_2), "X")
 
     def test_tic_tac_toe_3(self):
         """Test - none won board."""
         board_3 = [
-            "X...",
-            ".X..",
-            "..X.",
-            "....",
+            "O..",
+            ".X.",
+            "..O",
             ]
         self.assertEqual(tic_tac_toe_state_checker(board=board_3), ".")
 
