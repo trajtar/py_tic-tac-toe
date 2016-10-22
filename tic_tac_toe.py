@@ -7,9 +7,9 @@ obliczy bieżący stan gry "kółko i krzyżyk".
 
 Nie chcemy stworzyć całej gry!
 
-Napisaną funkcję będzie można wykorzystać do sprawdzania w grze:
-  czy gra powinna toczyć się dalej
+Napisaną funkcję będzie można wykorzystać podczas gry do sprawdzania:
   czy ktoś wygrał
+  czy nikt nie wygrał
   czy mamy remis
 
 Powodzenia!
@@ -40,6 +40,6 @@ def state(board):
       'XY' jeśli jest remis
 
     Zadania dodatkowe:
-      Zwróć False jeśli plansza jest niepoprawna.
+      Zwróć False jeśli plansza jest niepoprawna (nie jest kwadratowa).
       Napisz funkcję tak by działała niezależnie od rozmiaru planszy.
     """
