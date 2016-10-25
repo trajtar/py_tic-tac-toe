@@ -14,14 +14,14 @@ class TicTacToeStateTest(unittest.TestCase):
         """No winner."""
 
         board_a = [
-            "XO.",
-            ".OX",
-            ".X.",
+            "XOO",
+            "OXX",
+            "XXO",
         ]
         board_b = [
-            "O..",
-            ".X.",
-            "..O",
+            "OOX",
+            "XXO",
+            "OXO",
         ]
         self.assert_result(board_a, '.')
         self.assert_result(board_b, '.')
@@ -30,35 +30,70 @@ class TicTacToeStateTest(unittest.TestCase):
         """X won."""
 
         board = [
-            "X..",
-            ".X.",
-            "..X",
+            "XOO",
+            "OXO",
+            "OOX",
+        ]
+        board_b = [
+            "OOX",
+            "OXO",
+            "XOO",
         ]
         self.assert_result(board, 'X')
+        self.assert_result(board_b, 'X')
 
     def test_o_won(self):
         """O won."""
 
         board = [
-            "..O..",
-            "..O..",
-            "..O..",
-            "..O..",
-            "..O..",
+            "XOOOX",
+            "XOOXO",
+            "XXOXX",
+            "OXOXX",
+            "XXOOO",
         ]
         self.assert_result(board, 'O')
+
+        board_b = [
+            "XOX",
+            "OOO",
+            "XXO",
+        ]
+        self.assert_result(board_b, 'O')
 
     def test_invalid_dimensions(self):
         """Board has invalid dimensions."""
 
         board = [
-            "XXOO.",
-            "...X.",
+            "XXOOX",
+            "OXXO",
             "OOOO",
-            "...",
-            ".....",
+            "OXO",
+            "OXOXX",
         ]
         self.assert_result(board, False)
+
+    def test_draw(self):
+        """"Draw"""
+        board_a = [
+            "XOX",
+            "XOX",
+            "OXO",
+        ]
+        board_b = [
+            "OXX",
+            "XOO",
+            "XOX",
+        ]
+        board_c = [
+            "OX.",
+            "OX.",
+            "OX."]
+
+        self.assert_result(board_a, 'XO')
+        self.assert_result(board_b, 'XO')
+        self.assert_result(board_c, 'XO')
+
 
 if __name__ == '__main__':
     unittest.main()
