@@ -10,89 +10,64 @@ class TicTacToeStateTest(unittest.TestCase):
     def assert_result(self, board, result):
         self.assertEqual(tic_tac_toe.state(board), result)
 
-    def test_no_winner(self):
-        """No winner."""
-
-        board_a = [
-            "XOO",
-            "OXX",
-            "XXO",
-        ]
-        board_b = [
-            "OOX",
-            "XXO",
-            "OXO",
-        ]
-        self.assert_result(board_a, '.')
-        self.assert_result(board_b, '.')
-
     def test_x_won(self):
         """X won."""
 
-        board = [
-            "XOO",
-            "OXO",
-            "OOX",
+        board_a = [
+            "X..",
+            ".X.",
+            "..X",
         ]
-        board_b = [
-            "OOX",
-            "OXO",
-            "XOO",
-        ]
-        self.assert_result(board, 'X')
-        self.assert_result(board_b, 'X')
+
+        self.assert_result(board_a, 'X')
 
     def test_o_won(self):
         """O won."""
 
-        board = [
-            "XOOOX",
-            "XOOXO",
-            "XXOXX",
-            "OXOXX",
-            "XXOOO",
+        board_a = [
+            "..O..",
+            "..O..",
+            "..O..",
+            "..O..",
+            "..O..",
         ]
-        self.assert_result(board, 'O')
-
         board_b = [
-            "XOX",
-            "OOO",
-            "XXO",
+            ".....",
+            ".....",
+            "OOOOO",
+            ".....",
+            ".....",
         ]
+        self.assert_result(board_a, 'O')
         self.assert_result(board_b, 'O')
 
     def test_invalid_dimensions(self):
         """Board has invalid dimensions."""
 
         board = [
-            "XXOOX",
-            "OXXO",
+            "XX..",
+            "...X.",
             "OOOO",
-            "OXO",
-            "OXOXX",
+            "...",
+            ".....",
         ]
         self.assert_result(board, False)
 
-    def test_draw(self):
-        """"Draw"""
+    def test_no_winner(self):
+        """No winner."""
+
         board_a = [
-            "XOX",
-            "XOX",
-            "OXO",
+            "XO.",
+            ".OX",
+            ".X.",
         ]
         board_b = [
-            "OXX",
-            "XOO",
-            "XOX",
+            "O..",
+            ".X.",
+            "..O",
         ]
-        board_c = [
-            "OX.",
-            "OX.",
-            "OX."]
-
-        self.assert_result(board_a, 'XO')
-        self.assert_result(board_b, 'XO')
-        self.assert_result(board_c, 'XO')
+        self.assert_result(board_a, '.')
+        self.assert_result(board_b, '.')
 
 
 if __name__ == '__main__':
