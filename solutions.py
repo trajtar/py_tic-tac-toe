@@ -148,8 +148,9 @@ def state(board):
 
 
 
-#######################
+#######################################################
 # Tomek Rajtar
+
 def state(board):
     result = ''
     board_size = len(board[0])
@@ -208,3 +209,5 @@ def state(board):
         result = '.'
 
     return result
+
+#######################################################
